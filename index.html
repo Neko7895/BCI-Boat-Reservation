@@ -7,7 +7,7 @@
   <title>BCI Boat Reservation</title>
 
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">  
   <meta name="apple-mobile-web-app-title" content="#003669">
   <meta name="apple-touch-fullscreen" content="yes">
 
@@ -18,18 +18,18 @@
   <meta property="og:site_name" content="BCI Boat Reservation">
   <meta property="og:title" content="Reserva tu asiento en BCI Boat">
   <meta property="og:description" content="Reserva tu asiento en los barcos Jacana y otros botes de carga. Salidas desde Gamboa y BCI.">
-  <meta property="og:image" content="logo.svg">
+  <meta property="og:image" content="stri-logo.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="628">
-  <meta property="og:image:secure_url" content="logo.svg">
+  <meta property="og:image:secure_url" content="stri-logo.png">
   <meta property="og:image:type" content="image/svg">
 
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="stri-logo.png">
   <meta name="twitter:title" content="Reserva tu asiento en BCI Boat">
   <meta name="twitter:description" content="Reserva tu asiento en los barcos Jacana y otros botes de carga. Salidas desde Gamboa y BCI.">
-  <meta name="twitter:image" content="logo.svg">
-  <meta name="twitter:image:width" content="1200">
-  <meta name="twitter:image:height" content="628">
+  <meta name="twitter:image" content="stri-logo.png">
+  <meta name="twitter:image:width" content="1000">
+  <meta name="twitter:image:height" content="1000">
 
   <meta name="description" content="Reserva tu asiento en los barcos hacia BCI. Información sobre horarios y disponibilidad de Jacana y botes de carga.">
   <meta name="pagename" content="BCI Boat Reservation">
@@ -52,62 +52,57 @@
       font-style: normal;
       font-display: swap;
     }
-    body {
-      font-family: 'Proxima Nova Rg', sans-serif;
-    }
+    body { font-family: 'Proxima Nova Rg', sans-serif; }
   </style>
 </head>
+
 <body class="flex flex-col min-h-screen overflow-x-hidden">
 
   <header class="bg-[#003669] text-white py-4">
     <div class="max-w-[1440px] w-full h-auto mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
       <img src="logo.svg" alt="Logo" class="h-10 sm:h-12 lg:h-14 w-auto" />
-      <div class="flex border border-white rounded overflow-hidden text-sm sm:text-base">
-        <button class="px-3 py-1 bg-white text-[#003669] font-bold hover:bg-gray-200">ES</button>
-        <button class="px-3 py-1 bg-[#003669] text-white hover:bg-gray-800">EN</button>
+      <div class="flex rounded-[8px] overflow-hidden bg-[#062141] w-[100px] h-[44px]">
+        <button id="es-btn" class="px-4 py-2 hover:bg-[#062141] transition font-bold text-[20px] flex items-center justify-center h-full w-1/2">ES</button>
+        <button id="en-btn" class="px-4 py-2 hover:bg-[#062141] transition font-bold text-[20px] flex items-center justify-center h-full w-1/2">EN</button>
       </div>
     </div>
   </header>
 
-  <main class="relative flex-1 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 overflow-x-hidden"
-        style="min-height: calc(100vh - 94px - 76px);">
+  <main class="relative flex-1 flex justify-center items-center bg-[url('bg.jpg')] bg-cover bg-center min-h-screen px-4 sm:px-6 lg:px-8 overflow-x-hidden">
 
-    <div class="absolute inset-0 bg-[url('bg.jpg')] bg-cover bg-center z-0"></div>
-    <div class="absolute inset-0 bg-black/40 z-0"></div>
+    <div class="absolute inset-0 bg-black/40"></div>
 
-    <div class="relative z-10 max-w-[489px] w-full flex flex-col gap-6 sm:gap-8">
-      <h1 class="text-white text-xl sm:text-2xl md:text-4xl font-extrabold mb-4 sm:mb-6 md:mb-8 text-center">
-          BCI Boat <br class="block md:hidden" /> Reservation
+    <div class="relative z-10 max-w-[489px] w-full flex flex-col gap-5 sm:gap-6">
+      <h1 class="text-white text-3xl md:text-4xl font-extrabold text-center leading-tight">
+        BCI Boat <br class="block md:hidden" /> Reservation
       </h1>
 
-      <div class="bg-white/85 p-4 sm:p-6 md:p-8 rounded-xl shadow-lg flex flex-col gap-6 sm:gap-8">
-        
+    <div class="bg-white p-4 sm:p-6 md:p-7 rounded-xl shadow-lg flex flex-col gap-5 sm:gap-6">
         <div>
-          <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold mb-3 sm:mb-4">Jacana</h2>
-          <p id="jacana-text" class="text-black text-sm sm:text-base mb-4 sm:mb-6">
+          <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold mb-3">Jacana</h2>
+          <p id="jacana-text" class="text-black text-sm sm:text-base mb-4">
             Jacana departs daily at 7:15 a.m. from Gamboa and returns from BCI at 3:40 p.m. Seats are limited and must be reserved in advance.
           </p>
-          <a href="#" class="block w-full h-[44px] sm:h-[50px] md:h-[60px] flex items-center justify-center bg-[#0858A2] text-white rounded-lg font-bold shadow hover:bg-[#062141] transition text-[18px] sm:text-[20px]">
-            Book your seat
-            <svg class="ml-2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <a href="#" class="block w-full h-[44px] sm:h-[50px] flex items-center justify-center bg-[#0858A2] text-white rounded-lg font-bold shadow hover:bg-[#062141] transition text-[18px] sm:text-[20px]">
+            <span id="jacana-btn-text">Book your seat</span>
+            <svg class="ml-2 w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1.84375 1.49033L6.84375 7.84327L1.84375 13.4903" stroke="#E8E8E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
         </div>
 
         <div>
-          <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold mb-3 sm:mb-4">Small and Cargo Boats</h2>
-          <p id="small-text" class="text-black text-sm sm:text-base mb-4 sm:mb-6">
+          <h2 id="small-title" class="text-xl sm:text-2xl md:text-3xl font-extrabold mb-3">Small and Cargo Boats</h2>
+          <p id="small-text" class="text-black text-sm sm:text-base mb-4">
             Small and cargo boats are scheduled based on demand and may vary in timing and availability. We recommend submitting your request well in advance.
           </p>
-          <a href="#" class="block w-full h-[44px] sm:h-[50px] md:h-[60px] flex items-center justify-center bg-[#0858A2] text-white rounded-lg font-bold shadow hover:bg-[#062141] transition text-[18px] sm:text-[20px]">
-            Book your seat
-            <svg class="ml-2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <a href="#" class="block w-full h-[44px] sm:h-[50px] flex items-center justify-center bg-[#0858A2] text-white rounded-lg font-bold shadow hover:bg-[#062141] transition text-[18px] sm:text-[20px]">
+            <span id="small-btn-text">Book your seat</span>
+            <svg class="ml-2 w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1.84375 1.49033L6.84375 7.84327L1.84375 13.4903" stroke="#E8E8E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
         </div>
-
       </div>
     </div>
   </main>
@@ -120,6 +115,56 @@
     </div>
   </footer>
 
+  <script>
+    const esBtn = document.getElementById('es-btn');
+    const enBtn = document.getElementById('en-btn');
+
+    const translations = {
+      jacana: {
+        ES: {
+          title: "Jacana",
+          text: "Jacana sale diariamente a las 7:15 a.m. desde Gamboa y regresa desde BCI a las 3:40 p.m. Los asientos son limitados y deben reservarse con antelación.",
+          btn: "Reservar asiento"
+        },
+        EN: {
+          title: "Jacana",
+          text: "Jacana departs daily at 7:15 a.m. from Gamboa and returns from BCI at 3:40 p.m. Seats are limited and must be reserved in advance.",
+          btn: "Book your seat"
+        }
+      },
+      small: {
+        ES: {
+          title: "Botes Pequeños y de Carga",
+          text: "Los botes pequeños y de carga se programan según la demanda y los horarios pueden variar. Se recomienda enviar su solicitud con suficiente antelación.",
+          btn: "Reservar asiento"
+        },
+        EN: {
+          title: "Small and Cargo Boats",
+          text: "Small and cargo boats are scheduled based on demand and may vary in timing and availability. We recommend submitting your request well in advance.",
+          btn: "Book your seat"
+        }
+      }
+    };
+
+    function setLanguage(lang) {
+      esBtn.classList.toggle('bg-[#062141]', lang === 'ES');
+      esBtn.classList.toggle('bg-[#0858A2]',     lang !== 'ES');
+
+      enBtn.classList.toggle('bg-[#062141]', lang === 'EN');
+      enBtn.classList.toggle('bg-[#0858A2]',     lang !== 'EN');
+
+      // Textos
+      document.getElementById('jacana-text').textContent     = translations.jacana[lang].text;
+      document.getElementById('small-text').textContent      = translations.small[lang].text;
+      document.getElementById('jacana-btn-text').textContent = translations.jacana[lang].btn;
+      document.getElementById('small-btn-text').textContent  = translations.small[lang].btn;
+      document.getElementById('small-title').textContent     = translations.small[lang].title;
+    }
+
+    esBtn.addEventListener('click', (e) => { e.preventDefault(); setLanguage('ES'); });
+    enBtn.addEventListener('click', (e) => { e.preventDefault(); setLanguage('EN'); });
+
+    setLanguage('EN');
+  </script>
 </body>
 </html>
-
