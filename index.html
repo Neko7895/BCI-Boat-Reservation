@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon_1.ico" />
+  <title>BCI Boat Reservation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @font-face {
+      font-family: 'Proxima Nova Rg';
+      src: url('ProximaNova-Regular.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Proxima Nova Rg';
+      src: url('ProximaNova-Bold.woff2') format('woff2');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
+    body {
+      font-family: 'Proxima Nova Rg', sans-serif;
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen overflow-x-hidden">
+
+  <header class="bg-[#003669] text-white py-4">
+    <div class="max-w-[1440px] w-full h-auto mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
+      <img src="logo.svg" alt="Logo" class="h-10 sm:h-12 lg:h-14 w-auto" />
+      <div class="flex border border-white rounded overflow-hidden text-sm sm:text-base">
+        <button class="px-3 py-1 bg-white text-[#003669] font-bold hover:bg-gray-200">ES</button>
+        <button class="px-3 py-1 bg-[#003669] text-white hover:bg-gray-800">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative flex-1 flex justify-center items-center bg-[url('bg.jpg')] bg-cover bg-center px-4 sm:px-6 lg:px-8 overflow-x-hidden" style="min-height:100svh;">
+
+    <div class="absolute inset-0 bg-black/40 z-0"></div>
+
+    <div class="relative z-10 max-w-[1200px] w-full flex flex-col items-center text-left"
+        style="max-height:calc(100svh - 94px - 76px);">
+
+      <h1 class="text-white text-2xl md:text-4xl font-extrabold mb-8 w-full md:w-auto text-center md:text-left">
+        BCI Boat <br class="block md:hidden" /> Reservation
+      </h1>
+
+      <div class="bg-white/85 p-6 md:p-8 rounded-xl shadow-lg w-full md:w-[489px] flex flex-col gap-8">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-extrabold mb-4">Jacana</h2>
+          <p id="jacana-text" class="text-black mb-6">
+            Jacana departs daily at 7:15 a.m. from Gamboa and returns from BCI at 3:40 p.m. Seats are limited and must be reserved in advance.
+          </p>
+          <a href="#" class="block w-full h-[50px] md:h-[60px] flex items-center justify-center bg-[#0858A2] text-white rounded-lg font-bold shadow hover:bg-[#062141] transition text-[20px]">
+            Book your seat
+          </a>
+        </div>
+
+        <div>
+          <h2 class="text-2xl md:text-3xl font-extrabold mb-4">Small and Cargo Boats</h2>
+          <p id="small-text" class="text-black mb-6">
+            Small and cargo boats are scheduled based on demand and may vary in timing and availability. We recommend submitting your request well in advance.
+          </p>
+          <a href="#" class="block w-full h-[50px] md:h-[60px] flex items-center justify-center bg-[#0858A2] text-white rounded-lg font-bold shadow hover:bg-[#062141] transition text-[20px]">
+            Book your seat
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <footer class="w-full min-h-[76px] bg-[#062141] text-white py-4 flex items-center">
+    <div class="w-full max-w-full">
+      <p class="opacity-70 text-sm whitespace-normal break-words pl-4 pr-4 text-center md:text-left md:ml-[200px]">
+        © 2025 Smithsonian Tropical Research Institute. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
